@@ -49,6 +49,32 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Second Route"),
+//      ),
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Hero(
+          tag: 'imageHero',
+          child: Container(
+            height: double.infinity,
+            child: Image.asset(
+              'images/person-on-a-bridge-near-a-lake-747964.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 Widget titleSection = Container(
   padding: EdgeInsets.all(32.0),
   child: Row(
@@ -60,7 +86,7 @@ Widget titleSection = Container(
             Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
               child: Text(
-                'Oeschinen Lake Campground',
+                'Schönau am Königssee, Germany',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16.0,
@@ -68,7 +94,7 @@ Widget titleSection = Container(
               ),
             ),
             Text(
-              'Kandersteg, Switzerland',
+              'by Simon Migaj',
               style: TextStyle(
                 color: Colors.grey,
               ),
@@ -162,12 +188,12 @@ Widget buttonSection = Container(
 Widget textSection = Container(
   padding: const EdgeInsets.all(32),
   child: Text(
-    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-    'Alps. Situated 1,578 meters above sea level, it is one of the '
-    'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-    'half-hour walk through pastures and pine forest, leads you to the '
-    'lake, which warms to 20 degrees Celsius in the summer. Activities '
-    'enjoyed here include rowing, and riding the summer toboggan run.',
+    'Person on a Bridge Near a Lake\n'
+    'Uploaded at December 20, 2017\n'
+    'Size	6.1 MB\n'
+    'Resolution	4000px x 2525px\n'
+    'Taken At	September 08, 2017 1:45 pm\n'
+    'Aspect Ratio	160:101',
     softWrap: true,
     style: TextStyle(
       fontSize: 18.0,
@@ -218,32 +244,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           ),
         )
       ],
-    );
-  }
-}
-
-class DetailScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
-      ),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Hero(
-          tag: 'imageHero',
-          child: Container(
-            height: double.infinity,
-            child: Image.asset(
-              'images/person-on-a-bridge-near-a-lake-747964.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
